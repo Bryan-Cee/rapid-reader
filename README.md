@@ -22,3 +22,53 @@ Key ideas behind RSVP:
 - **Optional context** – Pure RSVP can feel disorienting. RapidReader adds a short, dimmed context snippet around the current word so you still see the surrounding sentence.
 
 In practice, this means you press play, fix your gaze near the center of the reader, and let the words stream by. The combination of ORP highlighting, fixed position, and adjustable WPM aims to increase reading speed while preserving comprehension and comfort.
+
+## Development
+
+### Prerequisites
+
+- Node.js 20 or higher
+- npm
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+```
+
+## Deployment
+
+This app is configured to deploy to GitHub Pages automatically.
+
+### Automatic Deployment
+
+The app automatically deploys to GitHub Pages when changes are pushed to the `main` branch via GitHub Actions.
+
+**Prerequisites:**
+1. Go to your repository Settings → Pages
+2. Set Source to "GitHub Actions"
+
+The workflow will:
+- Build the app using Vite
+- Deploy to GitHub Pages
+- Make the app available at `https://bryan-cee.github.io/rapid-reader/`
+
+### Manual Deployment
+
+To build the app manually:
+
+```bash
+npm run deploy
+```
+
+This will create an optimized production build in the `dist` directory with the correct base path for GitHub Pages.
