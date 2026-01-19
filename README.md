@@ -36,6 +36,10 @@ In practice, this means you press play, fix your gaze near the center of the rea
 # Install dependencies
 npm install
 
+# Configure analytics (optional)
+cp .env.example .env
+# Edit .env and add your Umami website ID
+
 # Start development server
 npm run dev
 
@@ -45,6 +49,23 @@ npm run build
 # Preview production build
 npm run preview
 ```
+
+### Analytics Configuration
+
+RapidReader uses [Umami](https://umami.is) for privacy-focused analytics tracking via cloud.umami.is.
+
+To enable analytics:
+
+1. Sign up at [cloud.umami.is](https://cloud.umami.is)
+2. Create a new website in your Umami dashboard
+3. Copy your website ID
+4. Create a `.env` file in the project root (or copy from `.env.example`):
+   ```bash
+   VITE_UMAMI_WEBSITE_ID=your-website-id-here
+   ```
+5. The analytics script will automatically be included when you build the app
+
+**Note:** Analytics tracking is optional. The app works perfectly without it. If no website ID is configured, the script tag will be present but won't track any data.
 
 ## Deployment
 
